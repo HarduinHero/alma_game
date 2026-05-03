@@ -20,6 +20,7 @@ $(document).ready(function(){
     const N = 30;
 
     const main_canvas = create_canvas('main_canvas', 720, 720);
+
     draw_grid(main_canvas, N)
 
     setup_drawing_tool(main_canvas, N)

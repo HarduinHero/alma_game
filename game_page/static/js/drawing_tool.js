@@ -19,7 +19,9 @@ function setup_drawing_tool(canvas, N) {
             pointer_folower.remove();
         }
         // pointer_folower = draw_point(canvas, N, 'p', grid_pos.X, grid_pos.Y, {fill : '#ff0000', r : '4'});
+        refresh();
         pointer_folower = draw_grid_clip_polygon_from_barrycentre(canvas, N, 'folower', mouse.X, mouse.Y, POLYS[1], folowerstyle);
+    
     });
 
     canvas.addEventListener('mousedown', function(event) {
@@ -61,6 +63,7 @@ function setup_drawing_tool(canvas, N) {
     });
     
     function refresh() {
+        console.log(drawings)
         drawings.forEach(function (element) {
             element.remove();
         });
@@ -68,6 +71,7 @@ function setup_drawing_tool(canvas, N) {
         recorded_points.forEach(function (coord, i) {
             drawings.push(draw_point(canvas, N, `p${i}`, coord[0], coord[1], {fill : '#0000ff', r : 2}));
         });
+
         drawings.push(draw_polygon(canvas, N, 'poly', 0, 0, recorded_points, get_piece_coloration()));
     }
 }

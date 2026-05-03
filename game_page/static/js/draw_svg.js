@@ -45,23 +45,20 @@ function draw_polygon(canvas, n, id, x, y, grid_points, attrs) {
 function draw_grid_clip_polygon_from_barrycentre(canvas, n, id, x, y, grid_points, attrs) {
     
     const c = get_canvas_data(canvas, n)
-    const shape_barry_local  = barycentre(grid_points);
-    console.log(c);
     
+    const shape_barry_local  = barycentre(grid_points);
     const origin_global_R    = [x-(shape_barry_local[0]*c.grid.CELL_WIDTH), y-(shape_barry_local[1]*c.grid.CELL_WIDTH)];
     const origin_global_N    = get_nearest_grid_point(canvas, n, origin_global_R[0], origin_global_R[1]);
+    
     draw_polygon(canvas, n, id, origin_global_N.X, origin_global_N.Y, grid_points, attrs);
     
+    console.log(c);
     console.log(x, y)
     console.log(shape_barry_local)
     console.log(c.grid.CELL_WIDTH*shape_barry_local.X);
     console.log(origin_global_R)
     console.log(origin_global_N);
-
-
-    draw_point(canvas, n, 'pbary', Math.round(origin_global_R[0]), Math.round(shape_barry_local[1]));
 }
-
 
 function draw_point(canvas, n, id, x, y, attrs) {
     const c = get_canvas_data(canvas, n)

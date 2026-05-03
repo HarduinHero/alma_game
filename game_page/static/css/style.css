@@ -19,21 +19,21 @@ body {
     background: linear-gradient(rgba(227,239,255,1) 25%, rgba(255,255,255,1) 50%, rgba(227,239,255,1) 75%); 
 }
 
-
-
 #play_zone {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 10px;
     padding-left: 10%;
 }
 #main_play_area {
     background-color: white;
     border: 3px black ridge;
+    margin-right: 5px;
     width: 720px;
     height: 720px;
 }
-#secondary_play_area {    
+#secondary_play_area {
+    margin-left: 5px;
     height: 100%;
     width: 20%;
 }
